@@ -7,9 +7,9 @@ class App extends StatelessWidget {
     return new MaterialApp(
       title: 'Flutter Demo',
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
-      home: new HomePage(title: 'Flutter Demo Home Page'),
+      home: new HomePage(title: 'Home Page'),
     );
   }
 }
