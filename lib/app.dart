@@ -10,7 +10,10 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: new SensazonalHome(),
+      routes: {
+        '/': (context) => SensazonalHome(),
+        '/counter': (context) => CounterPage(),
+      },
     );
   }
 }
