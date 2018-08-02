@@ -4,15 +4,15 @@ class SensazonalHome extends StatefulWidget {
   SensazonalHome({Key key}) : super(key: key);
 
   @override
-  _SensazonalHomeState createState() => new _SensazonalHomeState();
+  _SensazonalHomeState createState() => _SensazonalHomeState();
 }
 
 class _SensazonalHomeState extends State<SensazonalHome> {
   final List<Food> _foods = [
-    Food("Pineapple", "Fruit", [1, 3, 9, 10, 11, 12], "https://raw.githubusercontent.com/ronanrodrigo/Sensazonal/master/Sensazonal/System/Assets.xcassets/Content/PINEAPPLE.imageset/PINEAPPLE%403x.jpg"),
-    Food("Star Fruit", "Fruit", [1, 2, 6, 7, 8], "https://raw.githubusercontent.com/ronanrodrigo/Sensazonal/master/Sensazonal/System/Assets.xcassets/Content/STAR_FRUIT.imageset/STAR_FRUIT%403x.jpg"),
-    Food("Green Coconut", "Fruit", [1, 2, 3, 10, 11, 12], "https://raw.githubusercontent.com/ronanrodrigo/Sensazonal/master/Sensazonal/System/Assets.xcassets/Content/GREEN_COCONUT.imageset/GREEN_COCONUT%403x.jpg"),
-    Food("Fig", "Fruit", [1, 2, 3, 12], "https://raw.githubusercontent.com/ronanrodrigo/Sensazonal/master/Sensazonal/System/Assets.xcassets/Content/FIG.imageset/FIG%403x.jpg"),
+    Food(id: '1', name: 'Pineapple', group: 'Fruit', months:[1, 3, 9, 10, 11, 12], imageUrl: 'https://raw.githubusercontent.com/ronanrodrigo/Sensazonal/master/Sensazonal/System/Assets.xcassets/Content/PINEAPPLE.imageset/PINEAPPLE%403x.jpg'),
+    Food(id: '2', name: 'Star Fruit', group: 'Fruit', months:[1, 2, 6, 7, 8], imageUrl: 'https://raw.githubusercontent.com/ronanrodrigo/Sensazonal/master/Sensazonal/System/Assets.xcassets/Content/STAR_FRUIT.imageset/STAR_FRUIT%403x.jpg'),
+    Food(id: '3', name: 'Green Coconut', group: 'Fruit', months:[1, 2, 3, 10, 11, 12], imageUrl: 'https://raw.githubusercontent.com/ronanrodrigo/Sensazonal/master/Sensazonal/System/Assets.xcassets/Content/GREEN_COCONUT.imageset/GREEN_COCONUT%403x.jpg'),
+    Food(id: '4', name: 'Fig', group: 'Fruit', months:[1, 2, 3, 12], imageUrl: 'https://raw.githubusercontent.com/ronanrodrigo/Sensazonal/master/Sensazonal/System/Assets.xcassets/Content/FIG.imageset/FIG%403x.jpg'),
   ];
 
   @override
@@ -27,7 +27,7 @@ class _SensazonalHomeState extends State<SensazonalHome> {
             ListTile(
               title: Text(
                 food.name,
-                style: const TextStyle(fontSize: 18.0),
+                style: TextStyle(fontSize: 18.0),
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -38,17 +38,17 @@ class _SensazonalHomeState extends State<SensazonalHome> {
     }).toList();
 
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Sensazonal"),
+      appBar: AppBar(
+        title: Text('Sensazonal'),
       ),
-      body: new Column(children: [
+      body: Column(children: [
         Expanded(
           child: SafeArea(
             child: GridView.count(
-              crossAxisCount: (orientation == Orientation.portrait) ? 2 : 3,
+              padding: const EdgeInsets.all(5.0),
               mainAxisSpacing: 4.0,
               crossAxisSpacing: 4.0,
-              padding: const EdgeInsets.all(5.0),
+              crossAxisCount: (orientation == Orientation.portrait) ? 2 : 3,
               childAspectRatio: (orientation == Orientation.portrait) ? 0.9 : 1.3,
               children: tiles,
             ),
@@ -60,8 +60,8 @@ class _SensazonalHomeState extends State<SensazonalHome> {
 }
 
 class Food {
-  final String name, group, imageUrl;
+  final String id, name, group, imageUrl;
   final List<int> months;
 
-  const Food(this.name, this.group, this.months, this.imageUrl);
+  const Food({this.id, this.name, this.group, this.months, this.imageUrl});
 }

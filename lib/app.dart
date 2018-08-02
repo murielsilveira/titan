@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:titan/counter.dart';
 import 'package:titan/sensazonal/home.dart';
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
       home: new SensazonalHome(),
