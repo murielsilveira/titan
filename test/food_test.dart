@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:titan/sensazonal/home.dart';
+import 'package:titan/sensazonal/gateways/food_gateway.dart';
 
 void main() {
   group("food list query tests", () {
