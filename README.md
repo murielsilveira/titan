@@ -1,4 +1,4 @@
-# titan
+# titan [![Build Status](https://travis-ci.org/murielsilveira/titan.svg?branch=master)](https://travis-ci.org/murielsilveira/titan)
 
 A new Flutter project.
 
