@@ -1,5 +1,3 @@
-import 'dart:ui' show lerpDouble;
-
 import 'package:flutter/material.dart';
 
 class BankHome extends StatefulWidget {
@@ -24,7 +22,7 @@ class _BankHomeState extends State<BankHome> with TickerProviderStateMixin {
     );
     animation = CurvedAnimation(parent: controller, curve: Curves.elasticOut);
     position = Tween<Offset>(
-      begin: const Offset(2.0, 0.0),
+      begin: const Offset(3.0, 0.0),
       end: const Offset(0.0, 0.0),
     ).animate(animation);
 
@@ -46,11 +44,50 @@ class _BankHomeState extends State<BankHome> with TickerProviderStateMixin {
       body: Column(children: [
         Expanded(
           child: SafeArea(
-            child: Center(
-              child: SlideTransition(
-                position: position,
-                child: Text('Bank!'),
-              ),
+            child: Column(
+              children: <Widget>[
+                Text('asdf'),
+                Expanded(
+                  child: SlideTransition(
+                    position: position,
+                    child: Container(
+                      color: Colors.red,
+                      child: PageView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 30,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              color: Colors.green,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Text('Bank!'),
+                              ),
+                            );
+                          }),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: SlideTransition(
+                    position: position,
+                    child: Container(
+                      color: Colors.red,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 30,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              color: Colors.green,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Text('Bank!'),
+                              ),
+                            );
+                          }),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
