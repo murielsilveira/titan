@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:titan/bank/BankHome.dart';
 import 'package:titan/counter.dart';
 import 'package:titan/sensazonal/home.dart';
 
@@ -11,8 +12,10 @@ class App extends StatelessWidget {
         primarySwatch: Colors.amber,
       ),
       routes: {
-        '/': (context) => SensazonalHome(),
+        '/': (context) => BankHome(),
+        '/sensazonal': (context) => SensazonalHome(),
         '/counter': (context) => CounterPage(),
+        '/bank': (context) => BankHome(),
       },
     );
   }
