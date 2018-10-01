@@ -9,7 +9,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primaryColor: const Color.fromARGB(255, 132, 19, 158),
       ),
       routes: {
         '/': (context) => BankHome(),
