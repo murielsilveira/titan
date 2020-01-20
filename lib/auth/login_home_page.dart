@@ -16,30 +16,48 @@ class _LoginHomePageState extends State<LoginHomePage> {
     return Scaffold(
       appBar: null,
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 80.0),
-          child: Column(
-            children: [
-              Headline(),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 40.0),
-                child: Image.asset('assets/images/login-plant.png'),
-              ),
-              PrimaryButton('Login'),
-              Button('Register'),
-              MaterialButton(
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                child: Text(
-                  'Terms of service',
-                  style: TextStyle(
-                    color: const Color.fromRGBO(216, 216, 216, 1),
-                    fontWeight: FontWeight.normal,
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 80),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Headline(),
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  child: Image.asset(
+                    'assets/images/login-plant.png',
+                    fit: BoxFit.cover,
                   ),
                 ),
-                onPressed: () {},
-              ),
-            ],
+                Column(
+                  children: <Widget>[
+                    PrimaryButton(
+                      'Login',
+                      onPress: () {},
+                    ),
+                    SizedBox(height: 12),
+                    Button(
+                      'Register',
+                      onPress: () {},
+                    ),
+                    SizedBox(height: 12),
+                    MaterialButton(
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      child: Text(
+                        'Terms of service',
+                        style: TextStyle(
+                          color: const Color.fromRGBO(216, 216, 216, 1),
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
