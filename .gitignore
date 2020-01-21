@@ -9,3 +9,5 @@ build/
 .flutter-plugins
 .idea/workspace.xml
 flutter_export_environment.sh
+.flutter-plugins-dependencies
+Flutter.podspec
