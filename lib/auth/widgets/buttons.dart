@@ -18,7 +18,7 @@ class Button extends StatelessWidget {
     Widget finalChild = child == null ? Text(finalText) : child;
 
     return Container(
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         maxWidth: 275.0,
         minHeight: 48.0,
       ),
@@ -77,8 +77,8 @@ class PrimaryButton extends StatelessWidget {
         ],
         gradient: LinearGradient(
           colors: [
-            const Color.fromRGBO(10, 196, 186, 1),
-            const Color.fromRGBO(43, 218, 142, 1),
+            Color.fromRGBO(10, 196, 186, 1),
+            Color.fromRGBO(43, 218, 142, 1),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -93,6 +93,56 @@ class PrimaryButton extends StatelessWidget {
         child: Center(child: finalChild),
         onPressed: onPress,
       ),
+    );
+  }
+}
+
+class RaisedPrimaryButton extends StatelessWidget {
+  const RaisedPrimaryButton(
+    this.text, {
+    Key key,
+    this.child,
+    this.onPress,
+  }) : super(key: key);
+
+  final Widget child;
+  final String text;
+  final VoidCallback onPress;
+
+  @override
+  Widget build(BuildContext context) {
+    String finalText = text == null ? '' : text;
+    Widget finalChild = child == null ? Text(finalText) : child;
+
+    return RaisedButton(
+      textColor: Colors.white,
+      splashColor: Colors.white.withAlpha(50),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(6.0),
+      ),
+      padding: EdgeInsets.all(0.0),
+      child: Ink(
+        child: Container(
+          child: finalChild,
+          alignment: Alignment.center,
+          constraints: BoxConstraints(
+            maxWidth: 275.0,
+            minHeight: 48.0,
+          ),
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6.0),
+          gradient: LinearGradient(
+            colors: [
+              Color.fromRGBO(10, 196, 186, 1),
+              Color.fromRGBO(43, 218, 142, 1),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+      ),
+      onPressed: onPress,
     );
   }
 }

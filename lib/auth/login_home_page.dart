@@ -18,13 +18,13 @@ class _LoginHomePageState extends State<LoginHomePage> {
       body: SingleChildScrollView(
         child: Container(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 80),
+            padding: EdgeInsets.symmetric(vertical: 80),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Headline(),
                 Container(
-                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  padding: EdgeInsets.symmetric(vertical: 30),
                   child: Image.asset(
                     'assets/images/login-plant.png',
                     fit: BoxFit.cover,
@@ -48,7 +48,7 @@ class _LoginHomePageState extends State<LoginHomePage> {
                       child: Text(
                         'Terms of service',
                         style: TextStyle(
-                          color: const Color.fromRGBO(216, 216, 216, 1),
+                          color: Color.fromRGBO(216, 216, 216, 1),
                           fontWeight: FontWeight.normal,
                         ),
                       ),
@@ -83,8 +83,8 @@ class Headline extends StatelessWidget {
               'Greener.',
               gradient: LinearGradient(
                 colors: [
-                  const Color.fromRGBO(10, 196, 186, 1),
-                  const Color.fromRGBO(43, 218, 142, 1),
+                  Color.fromRGBO(10, 196, 186, 1),
+                  Color.fromRGBO(43, 218, 142, 1),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
